@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <!-- CSS 1 -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- CSS BOOTSTRAP -->
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.css' %}
+">
+</head>
+
+<body>
+    <img id="banner" src="{% static 'buku/img/crud.jpg' %}" alt="">
+    <div id="menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/buku/">Daftar buku</a></li>
+            <li><a href="/tamu/">Buku tamu</a></li>
+        </ul>
+    </div>
+    <!-- KELAS CONTAINER BOOTSTRAP -->
+    <div class="container">
+        {% for tampungPost in TampungPostingan %}
+        <h3>{{tampungPost.judul}}</h3>
+        <p>{{tampungPost.sinopsis}}</p>
+        <div class="alert alert-succes" role="alert">
+            Kategori : {{tampungPost.kategori}}
+        </div>
+        {% endfor %}
+        <br>
+    </div>
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <span class="text-dark">Copyright 2022</span>
+        </div>
+    </footer>
+    <!-- JS BOOTSTRAP -->
+    <script src="{% static 'vendor/bootstrap/jquery-3.3.1.slim.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'vendor/bootstrap/popper.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'vendor/bootstrap/bootstrap.js' %}" type="text/java
+script"></script>
+</body>
+
+</html>
